@@ -2,6 +2,13 @@
 researching socket programming in python to later implement the same concepts in a project or another language
 
 
+## HOW TO RUN THE PROGRAM
+you can run the program by cloning the repo and opening 2 separate terminals or command prompts
+
+on one navigate to the project and first run `python3 tcp_server.py`
+
+on the second terminal , navigate to the project and run `python3 tcp_client.py`
+
 ## USEFUL LINKS / NOTES 
 
 ### ARPANET - HISTORY
