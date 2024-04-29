@@ -15,16 +15,16 @@ with sock as s:
 
     # bind listen accept instantiation of socket 
     s.bind((HOST,PORT))
-    s.listen() # listens to the network stack at the bound port
-    conn, addr = s.accept() # returns a connection and an the address of the incomming connection
+    s.listen() # listens for connections and determines how many connections can be in backlog
+    conn, addr = s.accept() # blocking - returns a connection and an the address of the incomming connection
 
     # the connection must be what contains the recv function to get the data from the network
     with conn: 
-        print(f"Connected by {addr}")
+        print(f"Connected by {addr}") # addr is a tuple (interface/ip, port)
 
         # continue unpacking data of the given buffersize passed to the conn.recv function until there is no data left
         while True:
             data = conn.recv(1024)
             if not data: 
                 break
-            conn.sendall(data) # why do i need this???
+            conn.sendall(data) # why do i need this??? - sends data back to the connection socket as a byte response! 
